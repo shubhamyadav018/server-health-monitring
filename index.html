@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server Management Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Server Management Dashboard</h1>
+  
+  <!-- Add Server Form -->
+  <div id="add-server-form">
+    <h2>Add Server</h2>
+    <input type="text" id="server-name" placeholder="Server Name">
+    <input type="number" id="cpu-usage" placeholder="CPU Usage">
+    <input type="number" id="memory-usage" placeholder="Memory Usage">
+    <button onclick="addServer()">Add Server</button>
+  </div>
+  
+  <hr>
+  
+  <!-- Server List Section -->
+  <h2>Server List</h2>
+  <div id="server-list">
+    <!-- Dynamically rendered server items -->
+  </div>
+  
+  <hr>
+  
+  <!-- Data Visualization Section -->
+  <h2>Server Data Visualization</h2>
+  <div id="visualization-section">
+    <!-- The chart will be updated when a Visualize button is clicked -->
+    <canvas id="metricsChart" width="400" height="200"></canvas>
+  </div>
+  
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
